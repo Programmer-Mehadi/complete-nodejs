@@ -1,17 +1,18 @@
-// require http module
-var http = require("http")
+var os = require("os")
 
-// cretae a server callback function
-function serverCallbackFnc(req, res) {
-  // set the response content
-  res.writeHead(200, {
-    "Content-Type": "text/plain",
-  })
-  // send the response
-  res.end("Hello World!")
-}
-// create the server
-var server = http.createServer(serverCallbackFnc)
-server.listen(8080) // listen on port 8080
-// print a message when server starts listening
-console.log(`Server running on port http://127.0.0.1:8080`)
+console.log(__dirname)
+console.log(__filename)
+console.log(os.arch())
+console.log(os.cpus())
+
+console.log("os.freemem(): \n", os.freemem())
+console.log("os.homedir(): \n", os.homedir())
+console.log("os.hostname(): \n", os.hostname())
+console.log("os.endianness(): \n", os.endianness())
+console.log("os.loadavg(): \n", os.loadavg())
+console.log("os.platform(): \n", os.platform())
+console.log("os.release(): \n", os.release())
+console.log("os.tmpdir(): \n", os.tmpdir())
+console.log("os.totalmem(): \n", os.totalmem())
+console.log("os.type(): \n", os.type())
+console.log("os.uptime(): \n", os.uptime())
