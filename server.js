@@ -1,18 +1,17 @@
-var os = require("os")
+try {
+  const a = 1
+  const c = a + b
+} catch (err) {
+  console.log(err)
+}
 
-console.log(__dirname)
-console.log(__filename)
-console.log(os.arch())
-console.log(os.cpus())
-
-console.log("os.freemem(): \n", os.freemem())
-console.log("os.homedir(): \n", os.homedir())
-console.log("os.hostname(): \n", os.hostname())
-console.log("os.endianness(): \n", os.endianness())
-console.log("os.loadavg(): \n", os.loadavg())
-console.log("os.platform(): \n", os.platform())
-console.log("os.release(): \n", os.release())
-console.log("os.tmpdir(): \n", os.tmpdir())
-console.log("os.totalmem(): \n", os.totalmem())
-console.log("os.type(): \n", os.type())
-console.log("os.uptime(): \n", os.uptime())
+const fs = require("fs")
+function nodeStyleCallback(err, data) {
+  if (err) {
+    console.error("There was an error", err)
+    return
+  }
+  console.log(data.toString())
+}
+fs.readFile("does-not-exist.txt", nodeStyleCallback)
+fs.readFile("does-exist.txt", nodeStyleCallback)
